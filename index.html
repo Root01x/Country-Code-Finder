@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loarder.css">
     <title>Country Code Finder</title>
 </head>
 <body>
+
+    <div class="card">
+        <img src="img/robot.webp" alt="Descripción de imagen">
+        <div class="card-body">
+          <h5 class="card-title">Country Code Finder</h5>
+          <p class="card-text">Type a country code or name in the box below</p>
+          <input class="codeCountry" type="text">
+          <a href="#" class="btn btn-primary">Go!</a>
+          <div class="result"></div>
+          <div class="containerLoader">
+            <div class="newtons-cradle disabled" id="loader" >
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+                <div class="newtons-cradle__dot"></div>
+            </div>
+          </div>          
+        </div>        
+    </div>    
+</body>
+<script type="module" src="index.js"></script>
+</html>
+
   
    
-</body>
-<script src="index.js"></script>
-</html>
+
