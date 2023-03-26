@@ -3,6 +3,8 @@ const URL = (page) => `https://jsonmock.hackerrank.com/api/countries?page=${page
 
 export const $ = (query) => document.querySelector(query);
 export const countries = async() => {
+   $('.result').innerHTML=""
+   $('#loader').classList.remove("disabled");
    const valueCountry = ($('.codeCountry').value).toUpperCase()   
    for (let index = 0; index < 25; index++) {
 
@@ -11,11 +13,19 @@ export const countries = async() => {
       const valuefinded = data.find(({alpha2Code, name}) => alpha2Code === valueCountry || name.toUpperCase()==valueCountry)
       
       if(valuefinded)
+      {
+         $('#loader').classList.add("disabled");
          return $('.result').innerHTML = `<div><span>Country:</span>  ${valuefinded.name} </br>
                                           <span>Code:</span> ${valuefinded.alpha2Code}</div>`
+
+      }
       if(!valuefinded && index===24)
-      $('.result').innerHTML = `Country not found` 
+      {
+         
+         $('#loader').classList.add("disabled");
+         $('.result').innerHTML = `Country not found` 
       
+      }
    }
 
 }
